@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# script that displays the content of the current directory
+# in a list format
+# only the part of the name after the first dash is displayed
+# uses the for loop
+# Does not display hidden files
+
+milst=$(ls)
+
+for k in $milst; do
+  echo "$k" | cut -d '-' -f2
+done
