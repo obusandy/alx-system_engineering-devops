@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# a bash script Kills the process "7-highlander"
+# 7-highlander has been killed.
+# Terminal 1 & 2
+
+pkill -SIGKILL -f 7-highlander
