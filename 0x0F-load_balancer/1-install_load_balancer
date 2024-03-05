@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # enables management
 
-# updates package 
+# updates package
 sudo apt-get -y update
 
 # install necessary packages
