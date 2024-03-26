@@ -10,31 +10,15 @@ import json
 import requests
 from sys import argv
 
-
 if __name__ == "__main__":
+    nameurl = "https://jsonplaceholder.typicode.com/"
+    usser = requests.get(nameurl + "users/{}".format(sys.argv[1])).json()
+    todos = requests.get(nameurl + "todos", params={"userId": sys.argv[1]}).json()
 
-    sessionReq = requests.Session()
+    done = [t.get("title") for t in todos if t.get("completed") is True]
 
-    EmpyeeID = argv[1]
-    URLidentty = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(EmpyeeID)
-    nameURL = 'https://jsonplaceholder.typicode.com/users/{}'.format(EmpyeeID)
+    # print the results
 
-    employee = sessionReq.get(URLidentty)
-    employeeName = sessionReq.get(nameURL)
-
-    json_req = employee.json()
-    Emplyeename = employeeName.json()['name']
-
-    todos = 0
-    for done_tasks in json_req:
-        if done_tasks['completed']:
-            todos += 1
-
-# prints the results
-
-    print("Employee {} is done with tasks({}/{}):".
-          format(Emplyeename, todos, len(json_req)))
-
-    for done_tasks in json_req:
-        if done_tasks['completed']:
-            print("\t " + done_tasks.get('title'))
+    print("Employee {} is done with tasks({}/{}):".format(
+        usser.get("name"), len(done), len(todos)))
+    [print("\t {}".format(c)) for c in done]
