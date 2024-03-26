@@ -23,18 +23,16 @@ if __name__ == "__main__":
     employeeName = sessionReq.get(nameURL)
 
     json_req = employee.json()
-    Emplyeename = employeeName.json()['name']
+    name = employeeName.json()['name']
 
     todos = 0
-    for done_tasks in json_req:
-        if done_tasks['completed']:
+    for dontasks in json_req:
+        if dontasks['completed']:
             todos += 1
 
-
-
     print("Employee {} is done with tasks({}/{}):".
-          format(Emplyeename, todos, len(json_req)))
+          format(name, todos, len(json_req)))
 
-    for done_tasks in json_req:
-        if done_tasks['completed']:
-            print("\t " + done_tasks.get('title'))
+    for dontasks in json_req:
+        if dontasks['completed']:
+            print("\t " + dontasks.get('title'))
