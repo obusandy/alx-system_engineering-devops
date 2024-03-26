@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This is a scrit that reacords all tasks from all employees
-It extends the 
+It extends the  Python script to export data in the JSON format.
 """
 
 import json
@@ -20,6 +20,8 @@ if __name__ == "__main__":
     tasktodos = requests.get('https://jsonplaceholder.typicode.com/todos')
     tasktodos = tasktodos.json()
     todolist = {}
+    
+#list
 
     for usr in users:
         taskList = []
