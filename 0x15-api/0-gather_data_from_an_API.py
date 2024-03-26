@@ -10,7 +10,6 @@ import json
 import requests
 from sys import argv
 
-
 if __name__ == "__main__":
 
     sessionReq = requests.Session()
@@ -26,6 +25,7 @@ if __name__ == "__main__":
     name = employeeName.json()['name']
 
     todos = 0
+
     for dontasks in json_req:
         if dontasks['completed']:
             todos += 1
