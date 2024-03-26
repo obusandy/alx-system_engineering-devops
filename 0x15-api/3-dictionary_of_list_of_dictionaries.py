@@ -20,8 +20,10 @@ if __name__ == "__main__":
     tasktodos = requests.get('https://jsonplaceholder.typicode.com/todos')
     tasktodos = tasktodos.json()
     todolist = {}
-    
-#list
+
+    """
+    prints list
+    """
 
     for usr in users:
         taskList = []
